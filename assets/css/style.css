@@ -637,6 +637,14 @@ img.work-card__loghero { position: relative !important; inset: auto !important; 
 .tech__item a:hover .tech__ar { opacity: 1; transform: none; }
 .tech__item a:focus-visible { border-color: var(--accent); }
 .tech__empty { color: var(--text-mute); padding: 1rem 0; }
+.tech__more { display: flex; align-items: center; gap: 0.55rem; width: fit-content; margin: 1.8rem auto 0; padding: 0.7rem 1.5rem;
+  border: 1px solid var(--line-2); border-radius: 100px; background: var(--panel); color: var(--text);
+  font-family: var(--font-display); font-weight: 500; font-size: 0.9rem; cursor: pointer;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease); }
+.tech__more::after { content: '↓'; font-size: 0.95rem; color: var(--accent); transition: transform 0.3s var(--ease); }
+.tech__more[aria-expanded="true"]::after { transform: rotate(180deg); }
+.tech__more:hover { border-color: var(--accent); background: rgba(216,244,4,0.06); transform: translateY(-2px); }
+.tech__more[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) { .tech__item { animation: none; } }
 
 /* ---------- 21. Quotes ---------- */

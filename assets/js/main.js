@@ -573,21 +573,39 @@ if (burger) {
   const discEl = document.querySelector('#tech [data-disciplines]');
   if (discEl) discEl.textContent = String(chips.filter((c) => c.dataset.filter !== 'all').length);
 
-  chips.forEach((chip) => chip.addEventListener('click', () => {
-    const f = chip.dataset.filter;
-    chips.forEach((c) => { const on = c === chip; c.classList.toggle('is-active', on); c.setAttribute('aria-pressed', String(on)); });
-    let shown = 0; const replay = [];
+  const LIMIT = 12;                       // tiles shown before "Show all" in the All view
+  const moreBtn = root.querySelector('.tech__more');
+  const moreLabel = moreBtn ? moreBtn.querySelector('span') : null;
+  let filter = 'all';
+  let expanded = false;
+
+  const apply = () => {
+    let shown = 0, matched = 0; const replay = [];
     items.forEach((it) => {
-      const show = f === 'all' || it.dataset.cat === f;
+      const inFilter = filter === 'all' || it.dataset.cat === filter;
+      let show = inFilter;
+      if (inFilter) { matched++; if (filter === 'all' && !expanded && matched > LIMIT) show = false; }
       it.classList.toggle('is-hidden', !show);
-      if (show) {
-        shown++;
-        if (!RM) { it.style.animation = 'none'; replay.push(it); }
-      }
+      if (show) { shown++; if (!RM) { it.style.animation = 'none'; replay.push(it); } }
     });
     if (replay.length) { void document.body.offsetWidth; replay.forEach((it) => { it.style.animation = ''; }); }
     if (empty) empty.hidden = shown > 0;
+    if (moreBtn) {
+      const need = filter === 'all' && items.length > LIMIT;
+      moreBtn.hidden = !need;
+      moreBtn.setAttribute('aria-expanded', String(expanded));
+      if (moreLabel) moreLabel.textContent = expanded ? 'Show fewer' : ('Show all ' + items.length + ' tools');
+    }
+  };
+
+  chips.forEach((chip) => chip.addEventListener('click', () => {
+    filter = chip.dataset.filter;
+    expanded = false;                      // collapse again when switching discipline
+    chips.forEach((c) => { const on = c === chip; c.classList.toggle('is-active', on); c.setAttribute('aria-pressed', String(on)); });
+    apply();
   }));
+  if (moreBtn) moreBtn.addEventListener('click', () => { expanded = !expanded; apply(); });
+  apply();                                 // start collapsed
 })();
 
 /* ---------- industries: cursor-follow visual + spotlight ---------- */
