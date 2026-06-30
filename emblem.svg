@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Hook Strategy">
+  <circle cx="128" cy="128" r="106" fill="#163C2B"/>
+  <circle cx="128" cy="128" r="106" fill="none" stroke="#C8ED4A" stroke-width="3"/>
+  <circle cx="128" cy="128" r="89" fill="none" stroke="#9FD13A" stroke-width="1.5" stroke-opacity="0.55"/>
+
+  <g fill="#F4EFE4">
+    <g transform="translate(72,70) rotate(-40)">
+      <rect x="-13" y="-14" width="5.5" height="28" rx="1.5"/>
+      <rect x="7.5" y="-14" width="5.5" height="28" rx="1.5"/>
+      <rect x="-13" y="-2.75" width="26" height="5.5"/>
+    </g>
+    <g transform="translate(101,56) rotate(-21)">
+      <ellipse cx="0" cy="0" rx="11" ry="14" fill="none" stroke="#F4EFE4" stroke-width="5.5"/>
+    </g>
+    <g transform="translate(128,52) rotate(0)">
+      <ellipse cx="0" cy="0" rx="11" ry="14" fill="none" stroke="#F4EFE4" stroke-width="5.5"/>
+    </g>
+    <g transform="translate(157,57) rotate(21)">
+      <rect x="-10" y="-14" width="5.5" height="28" rx="1.5"/>
+      <polygon points="-4.5,0.5 8,-14 14.5,-14 2,0 14.5,14 8,14"/>
+    </g>
+  </g>
+
+  <circle cx="11" cy="128" r="2.6" fill="#C8ED4A"/>
+  <circle cx="245" cy="128" r="2.6" fill="#C8ED4A"/>
+
+  <g transform="translate(135,118) scale(0.94)">
+    <circle cx="-15" cy="-40" r="10.5" fill="none" stroke="#C8ED4A" stroke-width="6.5"/>
+    <path d="M-7 -33.5
+             L3 -3
+             A30 30 0 1 1 -41 5"
+          fill="none" stroke="#C8ED4A" stroke-width="15.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="-41,6 -49.5,-9 -28,-7.5" fill="#C8ED4A"/>
+  </g>
+</svg>
