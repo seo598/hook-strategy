@@ -6,11 +6,11 @@
    becomes visible even if a CDN fails).
    ===================================================================== */
 
-const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+export const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const FINE = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 /* ---------- dynamic CDN imports (resilient) ---------- */
-let gsap = null, ScrollTrigger = null, Lenis = null;
+export let gsap = null, ScrollTrigger = null, Lenis = null;
 // Fetch all three CDN modules concurrently (was 3 sequential round-trips that
 // blocked every interaction below until each resolved in turn). Each failure is
 // isolated so a single CDN hiccup still leaves the others usable.
@@ -47,7 +47,7 @@ if (gsap && !RM) gsap.set('.hero__title .word, .contact__title .word', { yPercen
 })();
 
 /* ---------- Lenis smooth scroll ---------- */
-let lenis = null;
+export let lenis = null;
 if (Lenis && !RM) {
   lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
   if (gsap && ScrollTrigger) {

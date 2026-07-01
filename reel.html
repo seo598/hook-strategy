@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="color-scheme" content="dark"/>
+  <meta name="theme-color" content="#06170D"/>
+  <title>The Reel — Hook Strategy</title>
+  <meta name="description" content="Eight stories, one growth engine — an immersive scroll through Hook Strategy's selected work, in motion."/>
+  <link rel="canonical" href="https://www.thehookstrategy.com/reel.html"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Hook Strategy"/>
+  <meta property="og:title" content="The Reel — Hook Strategy"/>
+  <meta property="og:description" content="Eight stories, one growth engine — an immersive scroll through our selected work, in motion."/>
+  <meta property="og:url" content="https://www.thehookstrategy.com/reel.html"/>
+  <meta property="og:image" content="https://www.thehookstrategy.com/assets/img/og.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://esm.sh" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/></noscript>
+  <link rel="stylesheet" href="assets/css/style.css?v=36"/>
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/brand/favicon-256.png"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"The Reel — Hook Strategy","url":"https://www.thehookstrategy.com/reel.html","description":"An immersive scroll through Hook Strategy's selected work.","mainEntity":{"@type":"ItemList","itemListElement":[
+    {"@type":"ListItem","position":1,"url":"https://www.thehookstrategy.com/case-fahdan.html","name":"Fahdan"},
+    {"@type":"ListItem","position":2,"url":"https://www.thehookstrategy.com/case-multiform.html","name":"Multiform"},
+    {"@type":"ListItem","position":3,"url":"https://www.thehookstrategy.com/case-amazingbahrain.html","name":"Amazing Bahrain"},
+    {"@type":"ListItem","position":4,"url":"https://www.thehookstrategy.com/case-startupnest.html","name":"Startup Nest"},
+    {"@type":"ListItem","position":5,"url":"https://www.thehookstrategy.com/case-businesshub.html","name":"Business Hub KSA"},
+    {"@type":"ListItem","position":6,"url":"https://www.thehookstrategy.com/case-deargold.html","name":"Dear Gold"},
+    {"@type":"ListItem","position":7,"url":"https://www.thehookstrategy.com/case-makkan.html","name":"Makkan"},
+    {"@type":"ListItem","position":8,"url":"https://www.thehookstrategy.com/case-propertyhub.html","name":"Property Hub"}
+  ]}}
+  </script>
+
+  <!-- Import map for zero-build ES modules (WebGL scene) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" crossorigin fetchpriority="low" />
+  <link rel="modulepreload" href="assets/js/reel.js" fetchpriority="low" />
+</head>
+<body class="reel-body">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div><span class="cursor__label"></span></div>
+
+  <main id="main" class="reel">
+    <canvas id="reel-canvas" aria-hidden="true"></canvas>
+
+    <header class="reel__chrome">
+      <a class="reel__home" href="index.html" aria-label="The Hook — home" data-cursor="hover">
+        <img class="logo-img" src="assets/brand/logo-wordmark-neon.png" alt="The Hook" decoding="async" width="110" height="20" style="--logo-h:20px" />
+      </a>
+      <div class="reel__progress" aria-hidden="true"><span id="reel-progress-fill"></span></div>
+      <a class="reel__exit" href="work.html" data-cursor="hover" aria-label="Exit the reel to Work">Exit <span aria-hidden="true">✕</span></a>
+    </header>
+
+    <nav class="reel__dots" aria-label="Chapters">
+      <button type="button" class="reel__dot" data-goto="reel-intro" data-cursor="hover" aria-label="Intro"></button>
+      <button type="button" class="reel__dot" data-goto="reel-fahdan" data-cursor="hover" aria-label="Fahdan"></button>
+      <button type="button" class="reel__dot" data-goto="reel-multiform" data-cursor="hover" aria-label="Multiform"></button>
+      <button type="button" class="reel__dot" data-goto="reel-amazingbahrain" data-cursor="hover" aria-label="Amazing Bahrain"></button>
+      <button type="button" class="reel__dot" data-goto="reel-startupnest" data-cursor="hover" aria-label="Startup Nest"></button>
+      <button type="button" class="reel__dot" data-goto="reel-businesshub" data-cursor="hover" aria-label="Business Hub KSA"></button>
+      <button type="button" class="reel__dot" data-goto="reel-deargold" data-cursor="hover" aria-label="Dear Gold"></button>
+      <button type="button" class="reel__dot" data-goto="reel-makkan" data-cursor="hover" aria-label="Makkan"></button>
+      <button type="button" class="reel__dot" data-goto="reel-propertyhub" data-cursor="hover" aria-label="Property Hub"></button>
+      <button type="button" class="reel__dot" data-goto="reel-outro" data-cursor="hover" aria-label="Start a project"></button>
+    </nav>
+
+    <section class="reel__chapter reel__chapter--intro" id="reel-intro" aria-label="Introduction">
+      <div class="reel__panel reel__panel--intro">
+        <p class="reel__eyebrow reveal-up"><span class="dot"></span> The Hook · Selected Work</p>
+        <h1 class="reel__title reveal-up">the reel.</h1>
+        <p class="reel__lede reveal-up">Eight stories. One growth engine. Scroll to step inside the work.</p>
+      </div>
+      <div class="reel__scrollcue" aria-hidden="true"><span>Scroll</span><div class="reel__scrollcue-line"><i></i></div></div>
+    </section>
+
+    <section class="reel__chapter" id="reel-fahdan" data-reel-cat="brand" aria-label="Fahdan">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">01 / 08</p>
+        <p class="reel__cat reveal-up">Brand &middot; Web &middot; SEO</p>
+        <h2 class="reel__proj reveal-up"><span class="cs-hero__badge reel__badge" aria-hidden="true"><img src="assets/img/clients/logos/fahdan.png" alt=""/></span>Fahdan</h2>
+        <p class="reel__headline reveal-up">A business-setup brand that ranks and converts.</p>
+        <a class="reel__link" href="case-fahdan.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter" id="reel-multiform" data-reel-cat="social" aria-label="Multiform">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">02 / 08</p>
+        <p class="reel__cat reveal-up">Social &middot; Content</p>
+        <h2 class="reel__proj reveal-up">Multiform</h2>
+        <p class="reel__headline reveal-up">500K+ views on a single reel.</p>
+        <a class="reel__link" href="case-multiform.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter" id="reel-amazingbahrain" data-reel-cat="campaign" aria-label="Amazing Bahrain">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">03 / 08</p>
+        <p class="reel__cat reveal-up">Campaign &middot; Social</p>
+        <h2 class="reel__proj reveal-up"><span class="cs-hero__badge reel__badge" aria-hidden="true"><img src="assets/img/clients/logos/amazing.png" alt=""/></span>Amazing Bahrain</h2>
+        <p class="reel__headline reveal-up">260,000 views in two weeks.</p>
+        <a class="reel__link" href="case-amazingbahrain.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter" id="reel-startupnest" data-reel-cat="web" aria-label="Startup Nest">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">04 / 08</p>
+        <p class="reel__cat reveal-up">Web &middot; Brand</p>
+        <h2 class="reel__proj reveal-up"><span class="cs-hero__badge reel__badge" aria-hidden="true"><img src="assets/img/clients/logos/startupnest.png" alt=""/></span>Startup Nest</h2>
+        <p class="reel__headline reveal-up">A platform built to be taken seriously.</p>
+        <a class="reel__link" href="case-startupnest.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter" id="reel-businesshub" data-reel-cat="brand" aria-label="Business Hub KSA">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">05 / 08</p>
+        <p class="reel__cat reveal-up">Brand &middot; Space &middot; Social</p>
+        <h2 class="reel__proj reveal-up">Business Hub KSA</h2>
+        <p class="reel__headline reveal-up">A brand worth walking into.</p>
+        <a class="reel__link" href="case-businesshub.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter" id="reel-deargold" data-reel-cat="gold" aria-label="Dear Gold">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">06 / 08</p>
+        <p class="reel__cat reveal-up">Branding</p>
+        <h2 class="reel__proj reveal-up">Dear Gold</h2>
+        <p class="reel__headline reveal-up">A brand that belongs in high-end retail.</p>
+        <a class="reel__link" href="case-deargold.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter" id="reel-makkan" data-reel-cat="web" aria-label="Makkan">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">07 / 08</p>
+        <p class="reel__cat reveal-up">Brand &middot; Web</p>
+        <h2 class="reel__proj reveal-up"><span class="cs-hero__badge reel__badge" aria-hidden="true"><img src="assets/img/clients/logos/makkan.png" alt=""/></span>Makkan</h2>
+        <p class="reel__headline reveal-up">App &amp; platform identity.</p>
+        <a class="reel__link" href="case-makkan.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter" id="reel-propertyhub" data-reel-cat="web" aria-label="Property Hub">
+      <div class="reel__panel">
+        <p class="reel__num reveal-up">08 / 08</p>
+        <p class="reel__cat reveal-up">Brand &middot; Web</p>
+        <h2 class="reel__proj reveal-up"><span class="cs-hero__badge reel__badge" aria-hidden="true"><img src="assets/img/clients/logos/propertyhub.png" alt=""/></span>Property Hub</h2>
+        <p class="reel__headline reveal-up">Property management &amp; rental.</p>
+        <a class="reel__link" href="case-propertyhub.html" data-cursor="hover">View case study <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="reel__chapter reel__chapter--outro" id="reel-outro" aria-label="Start a project">
+      <div class="reel__panel reel__panel--outro">
+        <p class="reel__eyebrow reveal-up"><span class="dot"></span> Your story is next</p>
+        <h2 class="reel__title reveal-up">let's build your hook.</h2>
+        <div class="reel__actions reveal-up">
+          <a href="start-project.html" class="btn btn--solid btn--lg" data-cursor="hover" data-magnetic><span>Start a project</span></a>
+          <a href="work.html" class="btn btn--ghost" data-cursor="hover" data-magnetic><span>See all work</span><i class="arrow">&rarr;</i></a>
+        </div>
+        <p class="reel__back"><a href="index.html" data-cursor="hover">&larr; Back to thehookstrategy.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/reel.js"></script>
+  <!-- No ?v= query here: reel.js does `import { lenis } from './main.js'` (bare
+       specifier). The two must resolve to the identical URL or the module
+       graph loads and evaluates main.js twice, creating two competing Lenis
+       instances that fight over scroll. -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
