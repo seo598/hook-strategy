@@ -1047,6 +1047,78 @@ html:has(.reel) { background: #06170d; }
 @keyframes reelPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
 @media (prefers-reduced-motion: reduce) { .reelcta__eyebrow .dot { animation: none; } }
 
+/* ---------- The Experience — interactive story ---------- */
+html:has(.xp), body.xp-body { height: 100%; overflow: hidden; background: #06170d; }
+.xp { position: fixed; inset: 0; z-index: 1; overflow: hidden; }
+#xp-canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+
+/* Start gate */
+.xp-gate { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; text-align: center; padding: 2rem;
+  background: radial-gradient(80% 80% at 50% 40%, rgba(10,44,24,0.6), rgba(6,23,13,0.92)); backdrop-filter: blur(4px);
+  transition: opacity 0.8s var(--ease); }
+.xp-gate.is-gone { opacity: 0; pointer-events: none; }
+.xp-gate__inner { max-width: 40rem; }
+.xp-gate__logo { margin-bottom: 2rem; }
+.xp-gate__eyebrow { font-family: var(--font-display); font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 0.8rem; }
+.xp-gate__title { font-size: var(--step-3); font-weight: 800; letter-spacing: -0.04em; text-transform: lowercase; margin-bottom: 1.2rem; }
+.xp-gate__lede { font-size: var(--step-0); color: var(--text-soft); font-family: var(--font-display); max-width: 30rem; margin: 0 auto 2rem; line-height: 1.5; }
+.xp-gate__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1.4rem; }
+.xp-gate__loading { font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.08em; color: var(--text-mute); transition: opacity 0.4s var(--ease); }
+.xp-gate__loading.is-ready { opacity: 0.4; }
+.xp-gate__note { margin-top: 1.6rem; font-family: var(--font-display); font-size: 0.85rem; }
+.xp-gate__note a { color: var(--text-mute); transition: color 0.3s var(--ease); }
+.xp-gate__note a:hover { color: var(--accent); }
+
+/* Chrome */
+.xp-chrome { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; gap: 1.2rem; padding: 1.1rem clamp(1.2rem, 4vw, 2.4rem); }
+.xp-home { flex: none; opacity: 0.92; }
+.xp-home:hover { opacity: 1; }
+.xp-progress { flex: 1; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.xp-progress span { display: block; height: 100%; width: 0%; background: var(--grad-2); box-shadow: 0 0 12px var(--accent-glow); transition: width 0.9s var(--ease); }
+.xp-chrome__right { flex: none; display: flex; align-items: center; gap: 1rem; }
+.xp-sound { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.5rem 0.95rem; border: 1px solid var(--line); border-radius: 100px; background: rgba(6,23,13,0.5); backdrop-filter: blur(10px);
+  font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--text-soft); cursor: pointer; transition: color 0.3s var(--ease), border-color 0.3s var(--ease); }
+.xp-sound:hover { color: var(--text); border-color: var(--line-2); }
+.xp-sound__bars { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.xp-sound__bars i { width: 2px; background: var(--accent); border-radius: 1px; height: 100%; transform-origin: bottom; animation: xpEq 1s ease-in-out infinite; }
+.xp-sound__bars i:nth-child(2) { animation-delay: 0.2s; } .xp-sound__bars i:nth-child(3) { animation-delay: 0.4s; } .xp-sound__bars i:nth-child(4) { animation-delay: 0.1s; }
+@keyframes xpEq { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+.xp-sound.is-muted .xp-sound__bars i { animation: none; transform: scaleY(0.3); opacity: 0.4; background: var(--text-mute); }
+.xp-exit { flex: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border: 1px solid var(--line); border-radius: 100px; font-family: var(--font-display); font-size: 0.82rem; color: var(--text-soft); background: rgba(6,23,13,0.5); backdrop-filter: blur(10px); transition: color 0.3s var(--ease), border-color 0.3s var(--ease); }
+.xp-exit:hover { color: var(--text); border-color: var(--line-2); }
+
+/* Chapter dots */
+.xp-dots { position: fixed; top: 50%; right: clamp(1rem, 2.6vw, 1.8rem); transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 0.65rem; }
+.xp-dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; padding: 0; cursor: pointer; transition: background 0.3s var(--ease), transform 0.3s var(--ease), border-color 0.3s var(--ease); }
+.xp-dot:hover { border-color: var(--accent); transform: scale(1.3); }
+.xp-dot.is-active { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 10px var(--accent-glow); transform: scale(1.35); }
+@media (max-width: 900px) { .xp-dots { display: none; } }
+
+/* Narrative overlays */
+.xp-story { position: fixed; left: clamp(1.4rem, 6vw, 6rem); bottom: clamp(3.5rem, 12vh, 7rem); right: clamp(1.4rem, 6vw, 6rem); z-index: 30; pointer-events: none; }
+.xp-chapter { position: absolute; left: 0; right: 0; bottom: 0; max-width: 44rem; opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.xp-chapter.is-active { opacity: 1; transform: none; position: relative; }
+.xp-chapter__num { font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 0.9rem; }
+.xp-chapter__line { font-size: clamp(1.9rem, 2.4vw + 1.4rem, 4.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.xp-chapter__sub { margin-top: 1rem; font-family: var(--font-display); font-size: var(--step-0); color: var(--text-soft); max-width: 34rem; }
+.xp-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; pointer-events: auto; }
+.xp-replay { margin-top: 1.4rem; background: transparent; border: 0; padding: 0; cursor: pointer; pointer-events: auto; font-family: var(--font-display); font-size: 0.9rem; color: var(--text-mute); transition: color 0.3s var(--ease); }
+.xp-replay:hover { color: var(--accent); }
+
+/* Advance hint */
+.xp-hint { position: fixed; bottom: clamp(1.2rem, 3vh, 2rem); left: 50%; transform: translateX(-50%); z-index: 30; font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.08em; color: var(--text-mute); animation: xpHint 2.4s ease-in-out infinite; pointer-events: none; }
+.xp-hint__key { color: var(--accent); border: 1px solid var(--line-2); border-radius: 6px; padding: 0.1rem 0.5rem; }
+@keyframes xpHint { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+/* When JS is off, the interactive stage is dead (buttons never wire up) — hide it so the noscript fallback shows. */
+html.no-js .xp { display: none; }
+.xp-noscript { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; text-align: center; padding: 2rem; color: var(--text-soft); }
+#xp-story:focus-visible { outline: none; }
+.xp-noscript a { color: var(--accent); }
+
+@media (max-width: 640px) { .xp-chapter__line { font-size: clamp(1.6rem, 8vw, 2.4rem); } .xp-story { bottom: 5rem; } }
+@media (prefers-reduced-motion: reduce) { .xp-sound__bars i, .xp-hint { animation: none; } }
+
 /* ---------- 26. Contact ---------- */
 .contact { padding: clamp(6rem,14vh,12rem) var(--pad); }
 .contact__inner { max-width: 900px; margin: 0 auto; text-align: center; }
