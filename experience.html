@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <meta name="color-scheme" content="dark"/>
   <meta name="theme-color" content="#06170D"/>
-  <title>The Experience — Hook Strategy</title>
-  <meta name="description" content="An interactive story about attention — step inside and click through it, with sound. From The Hook, a creative marketing agency in Bahrain &amp; KSA."/>
+  <title>The Crossing — an interactive tale by Hook Strategy</title>
+  <meta name="description" content="An interactive tale you travel through with sound — the crossing every brand makes, from adrift to a growing new land. From The Hook, a creative marketing agency in Bahrain &amp; KSA."/>
   <link rel="canonical" href="https://www.thehookstrategy.com/experience.html"/>
   <meta name="robots" content="index, follow"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Hook Strategy"/>
-  <meta property="og:title" content="The Experience — Hook Strategy"/>
-  <meta property="og:description" content="An interactive story about attention — step inside and click through it, with sound."/>
+  <meta property="og:title" content="The Crossing — an interactive tale by Hook Strategy"/>
+  <meta property="og:description" content="Press and hold to travel through our story, with sound — from adrift, to the one idea, to a growing new land."/>
   <meta property="og:url" content="https://www.thehookstrategy.com/experience.html"/>
   <meta property="og:image" content="https://www.thehookstrategy.com/assets/img/og.jpg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -22,10 +22,10 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'"/>
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/></noscript>
-  <link rel="stylesheet" href="assets/css/style.css?v=37"/>
+  <link rel="stylesheet" href="assets/css/style.css?v=38"/>
   <link rel="icon" type="image/png" sizes="256x256" href="assets/brand/favicon-256.png"/>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"The Experience — Hook Strategy","url":"https://www.thehookstrategy.com/experience.html","description":"An interactive story about attention from The Hook.","publisher":{"@type":"Organization","name":"Hook Strategy","url":"https://www.thehookstrategy.com/"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"The Crossing — an interactive tale by Hook Strategy","url":"https://www.thehookstrategy.com/experience.html","description":"An interactive tale you travel through, from adrift to a growing new land — the story of The Hook.","publisher":{"@type":"Organization","name":"Hook Strategy","url":"https://www.thehookstrategy.com/"}}
   </script>
 
   <script type="importmap">
@@ -37,7 +37,7 @@
   }
   </script>
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" crossorigin fetchpriority="low" />
-  <link rel="modulepreload" href="assets/js/experience.js" fetchpriority="low" />
+  <link rel="modulepreload" href="assets/js/experience.js?v=4" fetchpriority="low" />
 </head>
 <body class="xp-body">
   <a class="skip-link" href="#xp-story">Skip to the story text</a>
@@ -50,14 +50,14 @@
     <div class="xp-gate" id="xp-gate">
       <div class="xp-gate__inner">
         <img class="logo-img xp-gate__logo" src="assets/brand/logo-wordmark-neon.png" alt="The Hook" decoding="async" width="150" height="28" style="--logo-h:28px" />
-        <p class="xp-gate__eyebrow">An interactive story</p>
-        <h1 class="xp-gate__title">attention.</h1>
-        <p class="xp-gate__lede">Seven scenes. Best with sound. Click, or press space, to move through the story.</p>
+        <p class="xp-gate__eyebrow">An interactive tale</p>
+        <h1 class="xp-gate__title">the crossing.</h1>
+        <p class="xp-gate__lede">Four chapters, best with sound. Press&nbsp;and&nbsp;hold to travel — release to rest at each shore.</p>
         <div class="xp-gate__actions">
-          <button type="button" class="btn btn--solid btn--lg" id="xp-enter-sound" data-cursor="hover" data-magnetic><span>Enter with sound</span></button>
-          <button type="button" class="btn btn--ghost" id="xp-enter-silent" data-cursor="hover" data-magnetic><span>Enter silent</span></button>
+          <button type="button" class="btn btn--solid btn--lg" id="xp-enter-sound" data-cursor="hover" data-magnetic><span>Begin with sound</span></button>
+          <button type="button" class="btn btn--ghost" id="xp-enter-silent" data-cursor="hover" data-magnetic><span>Begin in silence</span></button>
         </div>
-        <p class="xp-gate__loading" id="xp-loading">Preparing the scene… <span id="xp-loading-pct">0</span>%</p>
+        <p class="xp-gate__loading" id="xp-loading">Charting the crossing… <span id="xp-loading-pct">0</span>%</p>
         <p class="xp-gate__note"><a href="index.html" data-cursor="hover">← Back to thehookstrategy.com</a></p>
       </div>
     </div>
@@ -83,58 +83,44 @@
     <!-- Narrative overlays (one per chapter) -->
     <div class="xp-story" id="xp-story" tabindex="-1" aria-live="polite">
       <article class="xp-chapter is-active" data-ch="0">
-        <p class="xp-chapter__num">01 / 07</p>
-        <h2 class="xp-chapter__line">Attention is the rarest currency on earth.</h2>
-        <p class="xp-chapter__sub">Everyone is spending it. Almost no one is earning it.</p>
+        <p class="xp-chapter__num">01 / 04 — Open water</p>
+        <h2 class="xp-chapter__line">Every brand begins adrift — a single light on a wide, dark sea.</h2>
+        <p class="xp-chapter__sub">Attention is the only current strong enough to carry it somewhere.</p>
       </article>
       <article class="xp-chapter" data-ch="1">
-        <p class="xp-chapter__num">02 / 07</p>
-        <h2 class="xp-chapter__line">Every feed is a war for a fraction of a second.</h2>
-        <p class="xp-chapter__sub">Thousands of messages. One thumb. Most of it vanishes.</p>
+        <p class="xp-chapter__num">02 / 04 — The spark</p>
+        <h2 class="xp-chapter__line">So we go looking for the one true idea. The hook.</h2>
+        <p class="xp-chapter__sub">Sharp enough to cut through the noise. Honest enough to hold.</p>
       </article>
       <article class="xp-chapter" data-ch="2">
-        <p class="xp-chapter__num">03 / 07</p>
-        <h2 class="xp-chapter__line">Then — a hook.</h2>
-        <p class="xp-chapter__sub">Something they can't scroll past. Click it.</p>
+        <p class="xp-chapter__num">03 / 04 — The crossing</p>
+        <h2 class="xp-chapter__line">A good idea never travels alone. It gathers a tribe.</h2>
+        <p class="xp-chapter__sub">Island to island the story spreads — until the audience becomes the storyteller.</p>
       </article>
       <article class="xp-chapter" data-ch="3">
-        <p class="xp-chapter__num">04 / 07</p>
-        <h2 class="xp-chapter__line">One idea, engineered to be impossible to ignore.</h2>
-        <p class="xp-chapter__sub">Sharp enough to cut through. Flexible enough to travel.</p>
-      </article>
-      <article class="xp-chapter" data-ch="4">
-        <p class="xp-chapter__num">05 / 07</p>
-        <h2 class="xp-chapter__line">It spreads. It multiplies. It earns its own momentum.</h2>
-        <p class="xp-chapter__sub">Attention compounds when the idea is worth passing on.</p>
-      </article>
-      <article class="xp-chapter" data-ch="5">
-        <p class="xp-chapter__num">06 / 07</p>
-        <h2 class="xp-chapter__line">Attention becomes demand. Demand becomes growth.</h2>
-        <p class="xp-chapter__sub">The glance you earned turns into the number that matters.</p>
-      </article>
-      <article class="xp-chapter" data-ch="6">
-        <p class="xp-chapter__num">07 / 07</p>
-        <h2 class="xp-chapter__line">We're The Hook.<br>Where great ideas take bait.</h2>
+        <p class="xp-chapter__num">04 / 04 — New land</p>
+        <h2 class="xp-chapter__line">And every crossing lands somewhere new.<br>Somewhere growing.</h2>
+        <p class="xp-chapter__sub">We're The Hook. Where great ideas take bait.</p>
         <div class="xp-actions">
           <a href="start-project.html" class="btn btn--solid btn--lg" data-cursor="hover" data-magnetic><span>Start a project</span></a>
           <a href="work.html" class="btn btn--ghost" data-cursor="hover" data-magnetic><span>See our work</span><i class="arrow">→</i></a>
         </div>
-        <button type="button" class="xp-replay" id="xp-replay" data-cursor="hover">↺ Replay the story</button>
+        <button type="button" class="xp-replay" id="xp-replay" data-cursor="hover">↺ Make the crossing again</button>
       </article>
     </div>
 
     <!-- Advance hint -->
     <div class="xp-hint" id="xp-hint" hidden aria-hidden="true">
-      <span class="xp-hint__key">click</span> or <span class="xp-hint__key">space</span> to continue
+      press &amp; <span class="xp-hint__key">hold</span> to travel — or <span class="xp-hint__key">space</span>
     </div>
   </main>
 
   <noscript>
     <div class="xp-noscript">
-      <p>This is an interactive experience that needs JavaScript. See our <a href="work.html">work</a> or <a href="index.html">homepage</a> instead.</p>
+      <p>This is an interactive tale that needs JavaScript. See our <a href="work.html">work</a> or <a href="index.html">homepage</a> instead.</p>
     </div>
   </noscript>
 
-  <script type="module" src="assets/js/experience.js"></script>
+  <script type="module" src="assets/js/experience.js?v=4"></script>
 </body>
 </html>
